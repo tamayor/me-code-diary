@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Encode Sans', sans-serif;
+}
+:root {
+    --main-color: rgb(72, 161, 122);    /* A slightly darker green */
+    --bg-color: rgb(16, 40, 24);       /* A darker shade of green for background */
+    --bg-color-2: rgb(31, 76, 45);     /* A medium shade of green for secondary background */
+    --bg-color-3: rgb(153, 207, 179);  /* A lighter shade of green for tertiary background */
+    --txt-color: rgb(235, 245, 238);   /* A light shade for text color */
+}
+body{
+    margin: 0;
+    font-size: 15px;
+    background-color: var(--bg-color);
+    color: var(--txt-color);
+}
+.contents{
+    padding:20px;
+    display: block;
+    }
+    .day--no span{
+        font-weight: 200;
+    }
+    .bold{
+        font-weight: 700;
+    }
+    .content--day-input:focus{
+        outline: none;
+    }
+    main{
+        display: block;
+    }
+
+em{
+    font-size: 50px;
+}
+.section_div{
+    height: 20px;
+    background-color: var(--bg-color);
+    animation-name : glowShadow;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+.back{
+    position: fixed;
+    top: 1%;
+    left: 50%;
+    font-size: 30px;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: var(--main-color);
+}
+.back:hover{
+    color: var(--txt-color);
+}
+@keyframes glowShadow {
+    0%{
+        box-shadow: 0 0 0 0  rgb(153, 207, 179, 0);
+    }
+    20%{
+        box-shadow: 0 20px 20px 0px rgb(153, 207, 179, .2);
+    }
+}
+/*-------------------------------*/
+.code-block{
+    color: var(--txt-color);
+    padding: 10px;
+    background-color: rgb(0, 16, 5);
+    height: 50vh;
+    overflow-y: scroll;
+    overscroll-behavior-y: contain;
+    width: max-content;
+    border-radius: 10px;
+    letter-spacing: .7px;
+}
+/* Custom CSS styles for JavaScript code */
+
+/* Highlight comments */
+pre.code-block code .comment {
+    color: #5d8e46;
+  }
+  
+  /* Highlight function names */
+  pre.code-block code .function {
+    color: #e09e60;
+  }
+  
+  /* Highlight numbers */
+  pre.code-block code .number {
+    color: #b5cea8;
+  }
+  
+  /* Highlight keywords (e.g., if, else, try, catch, etc.) */
+  pre.code-block code .keyword {
+    color: #96e7ea;
+  }
+  pre.code-block code .constant {
+    color: #e9e952;
+  }
+  

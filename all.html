@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="all.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>All</title>
+</head>
+<body>
+    <a href="main.html" class="back">&otimes;</a>
+    <main id="main_all">
+<div class="section_div"></div>
+        <section class="contents" id="1">
+            <h2 class="day--no"><em>Day 1</em> : The Beginning</h2>
+            <h5 class="day--date">August 5, 2023</h5>
+            <hr>
+            <div class="day--contents">
+                <p>This is my first day, and I just made this website! <i>I slept at 2 am in the morning!</i></p>
+                <p>Working for <span class="bold">5 hours</span> straight</p>
+                <hr>
+                <h3>So this is the fucking code : </h3>
+                <p>This is the <strong>Javascript</strong> code that handles the editing of Day and Button</p>
+                <pre class="code-block">
+                    <code>
+                    <span class="keyword">const</span> <span class="constant">MAX</span> = <span class="number">1</span>;
+
+                    <span class="keyword">const</span> mcdDaysInputEnter = <span class="function">document.getElementById</span>("mcd_days_input");
+                    mcdDaysInputEnter.addEventListener("keydown", <span class="function">function</span>(event) <span class="comment">//Check if the pressed key is the "Enter" key</span>
+                    {
+                    <span class="keyword">if</span> (event.key === "Enter") {
+                        event.preventDefault(); <span class="comment">// Prevent the default behavior of the "Enter" key</span>
+                        <span class="keyword">if</span> (visitORexit.innerHTML === 'visit') {
+                        <span class="function">contentDisplay</span>();
+                        visitORexit.innerHTML = "exit";
+                        visitORexit.style.cssText = `
+                            background-color : rgb(55, 179, 106);
+                            border-radius : 15px;
+                        `;
+                        }
+                    }
+                    });
+
+                    <span class="comment">// Get the input element</span>
+                    <span class="keyword">const</span> inputNumber = <span class="function">document.getElementById</span>("mcd_days_input");
+
+                    <span class="function">function</span> <span class="function">checkFunction</span>() <span class="comment">//choose function based on the button state</span>
+                    {
+                    <span class="keyword">if</span> (visitORexit.innerHTML === 'visit') {
+                        <span class="function">contentDisplay</span>();
+                        visitORexit.innerHTML = "exit";
+                        visitORexit.style.cssText = `
+                        background-color : rgb(55, 179, 106);
+                        border-radius : 15px;
+                        `;
+                    } else {
+                        <span class="function">hideContent</span>();
+                        visitORexit.innerHTML = "visit";
+                        visitORexit.style.cssText = `
+                        background-color : none;
+                        `;
+                    }
+                    }
+
+                    <span class="function">function</span> <span class="function">contentDisplay</span>() <span class="comment">//Function to show content</span>
+                    {
+                    <span class="keyword">const</span> inputValue = inputNumber.innerHTML;
+                    <span class="keyword">try</span> {
+                        <span class="keyword">if</span> (inputValue >= <span class="number">1</span> || inputValue <= MAX) {
+                        document.getElementById(inputValue).style.display = 'block';
+                        document.getElementById("mcd_days_input").contentEditable = "false";
+                        document.getElementById("mcd_days_input").style.cssText = `
+                            border: none
+                        `;
+                        }
+                    } <span class="keyword">catch</span> (error) {
+                        console.log(error);
+                    }
+                    }
+
+                    <span class="function">function</span> <span class="function">hideContent</span>() <span class="comment">//Function to hide content</span>
+                    {
+                    <span class="keyword">const</span> inputValue = inputNumber.innerHTML;
+                    document.getElementById(inputValue).style.display = 'none';
+                    document.getElementById("mcd_days_input").contentEditable = "true";
+                    document.getElementById("mcd_days_input").style.cssText = `
+                        border-bottom: 1px solid rgb(55, 179, 106);
+                    `;
+                    }
+
+                    <span class="function">function</span> <span class="function">checkIfNumbers</span>() <span class="comment">//check if numbers, null or the value of input</span>
+                    {
+                    <span class="keyword">if</span> (isNaN(<span class="function">Number</span>(inputNumber.innerHTML)) ||
+                        <span class="function">Number</span>(inputNumber.innerHTML) > MAX ||
+                        <span class="function">Number</span>(inputNumber.innerHTML) < <span class="number">0</span> ||
+                        inputNumber.innerHTML === "") {
+                        visitORexit.innerHTML = `insert a number &gt;${MAX}`;
+                        visitORexit.disabled = true;
+                    } else {
+                        visitORexit.innerHTML = "visit";
+                        visitORexit.disabled = false;
+                    }
+                    }
+
+                    inputNumber.addEventListener('input', <span class="function">checkIfNumbers</span>)
+                    <span class="keyword">const</span> visitORexit = <span class="function">document.getElementById</span>('visit_exit'); <span class="comment">//button</span>
+                    visitORexit.addEventListener('click', <span class="function">checkFunction</span>);
+                    </code>
+                </pre>
+                <p><i>Thanks ChatGPT for the assistance</i></p>
+            </div>
+        </section>
+<div class="section_div"></div>
+        <section class="contents" id="2">
+            <h2 class="day--no"><em>Day 2</em> : The Beginning</h2>
+            <h5 class="day--date">August 5, 2023</h5>
+            <div class="day--contents">
+                <p>This is my first day, and I just made this website!</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,152 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Encode Sans', sans-serif;
+}
+:root {
+    --main-color: rgb(72, 161, 122);    /* A slightly darker green */
+    --bg-color: rgb(16, 40, 24);       /* A darker shade of green for background */
+    --bg-color-2: rgb(31, 76, 45);     /* A medium shade of green for secondary background */
+    --bg-color-3: rgb(153, 207, 179);  /* A lighter shade of green for tertiary background */
+    --txt-color: rgb(235, 245, 238);   /* A light shade for text color */
+}
+body{
+    margin: 0;
+    font-size: 15px;
+    background-color: var(--bg-color);
+    color: var(--txt-color);
+}
+.mcd--header{
+    margin: 0;
+    background-color: var(--bg-color-2);
+}
+.mcd--head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--main-color);
+}
+.mcd--title{
+    color: var(--txt-color);
+    font-size: 3rem;
+    margin: 5px 0 10px;
+}
+.mcd--second-title{
+    color: var(--txt-color);
+    width: 50%;
+    margin: 0;
+    text-align: center;
+    margin: 10px auto;
+}
+.mcd--check-days{
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.view-all{
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    padding: 10px;
+    display:flex;
+    justify-content: end;
+}
+.view-all a{
+    color: var(--main-color);
+    text-decoration: none;
+
+}
+.view-all:hover a{
+    color: var(--txt-color);
+}
+.mcd--days{
+    display: flex;
+    font-size: 2rem;
+    border-radius: 10px;
+    border: 2px solid var(--bg-color-2);
+}
+.mcd--days-input{
+    font-size: 3.5rem;
+    color: var(--txt-color);
+    min-width: min-content;
+    min-height: max-content;
+    text-align: left;
+    margin: 5px;
+    font-size: larger;
+    font-weight: 700;
+    border-bottom: 1px solid var(--main-color);
+}
+.mcd--days:hover{
+    animation-name: hoverNumbers;
+    animation-duration: 3s;
+}
+@keyframes hoverNumbers {
+    0%{
+        border-top: 2px solid var(--main-color);
+    }
+    20%{
+        border-top: 2px solid var(--main-color);
+        border-left: 2px solid var(--main-color);
+        border-right: 2px solid var(--main-color);
+    }
+    70%{
+        border: 2px solid var(--main-color);
+    }
+    80%{
+        border-bottom: 2px solid var(--main-color);
+        border-left: 2px solid var(--main-color);
+        border-right: 2px solid var(--main-color);
+    }
+    90%{
+        border-bottom: 2px solid var(--main-color);
+    }
+}
+.mcd--days-input:focus{
+    animation-name: focusNumbers;
+    animation-duration: 2s;
+    border: none;
+    outline: none;
+}
+@keyframes focusNumbers {
+    0%{
+        color: var(--txt-color);
+        border-bottom: 1px solid var(--main-color);
+    }
+    20%{
+        color: var(--main-color);
+        border-bottom: 1px solid var(--bg-color);
+    }
+    100%{
+        color: var(--txt-color);
+        border-bottom: 1px solid var(--main-color);
+    }
+}
+.mcd--days-title{
+    color: var(--txt-color);
+    margin: 5px;
+}
+.mcd--button{
+    background-color: var(--bg-color);
+    color: var(--txt-color);
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px;
+    width: max-content;
+    height: fit-content;
+    border-radius: 5px;
+}
+.mcd--button:hover{
+    color: var(--txt-color);
+    background-color: var(--main-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+.mcd--button:disabled{
+    background-color: red;
+    border-radius: 5px;
+}

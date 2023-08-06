@@ -1,0 +1,16 @@
+.contents{
+    margin: 0 50px;
+    display: none;
+}
+.day--no span{
+    font-weight: 200;
+}
+.bold{
+    font-weight: 700;
+}
+.content--day-input:focus{
+    outline: none;
+}
+main{
+    display: block;
+}
