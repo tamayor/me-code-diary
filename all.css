@@ -35,6 +35,9 @@ body{
 em{
     font-size: 50px;
 }
+hr{
+    border: 1px solid var(--bg-color-2);
+}
 .section_div{
     height: 20px;
     background-color: var(--bg-color);
