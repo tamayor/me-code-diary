@@ -15,6 +15,10 @@ body{
     background-color: var(--bg-color);
     color: var(--txt-color);
 }
+hr{
+    border: 1px solid var(--bg-color-2);
+    background-color: none;
+}
 .mcd--header{
     margin: 0;
     background-color: var(--bg-color-2);
